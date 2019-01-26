@@ -1,8 +1,9 @@
 # SimpleTrading
-Bukkit plugin to allow players to safely trade with one another
-
+This is a fork of SimpleTrading plugin for Bukkit.
+Original author: xaniox
+Original plugin page:
 * BukkitDev: http://dev.bukkit.org/bukkit-plugins/simple-trading/
-* Development Builds / Continuous Integration: https://ci.xaniox.de/job/SimpleTrading/ &nbsp;&nbsp;![Build Status](https://ci.xaniox.de/job/SimpleTrading/badge/icon)
+* SpigotMC: https://www.spigotmc.org/resources/simpletrading.23802/
 
 ## Compilation
 
