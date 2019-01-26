@@ -1,6 +1,6 @@
 /*
  * This file is part of SimpleTrading.
- * Copyright (c) 2015-2016 Matthias Werning
+ * Copyright (c) 2015-2016 xaniox
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -48,11 +48,10 @@ public class ItemControlManager extends ControlManager<ItemStack> {
 		this.lores = config.getItemControlLoreList();
 	}
 	
-	@SuppressWarnings("deprecation")
     @Override
 	protected boolean isAllowedBlacklist(ItemStack stack) {
 		for (ItemStackData data : items) {
-			if (data.getMaterial() == stack.getType() && data.getData() == stack.getData().getData()) {
+			if (data.getMaterial() == stack.getType()) {
 				return false;
 			}
 		}

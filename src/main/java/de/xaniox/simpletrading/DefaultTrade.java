@@ -1,6 +1,6 @@
 /*
  * This file is part of SimpleTrading.
- * Copyright (c) 2015-2016 Matthias Werning
+ * Copyright (c) 2015-2016 xaniox
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,22 +39,20 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.material.MaterialData;
 
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Map;
 
-@SuppressWarnings("deprecation")
 public class DefaultTrade implements Trade {
 
 	private static final int INVENTORY_SIZE = 6 * 9;
 	private static final int[] SEPERATOR_INDEXES = { 0, 1, 7, 8, 9, 13, 17, 22, 31, 40, 49 };
-    private static final String[] LEVEL_UP_SEARCH = {"LEVEL_UP", "PLAYER_LEVELUP"};
+    private static final String[] LEVEL_UP_SEARCH = {"LEVEL_UP", "PLAYER_LEVELUP", "ENTITY_PLAYER_LEVELUP"};
     private static final String[] CLICK_SEARCH = {"UI_BUTTON_CLICK", "CLICK"};
 	
-	private static final MaterialData UNCONFIRMED_STATUS_MATERIAL_DATA = new MaterialData(Material.STAINED_GLASS, (byte) 14);
-	private static final MaterialData CONFIRMED_STATUS_MATERIAL_DATA = new MaterialData(Material.STAINED_GLASS, (byte) 5);
+	private static final Material UNCONFIRMED_STATUS_MATERIAL = Material.LIME_STAINED_GLASS_PANE;
+	private static final Material CONFIRMED_STATUS_MATERIAL = Material.RED_STAINED_GLASS_PANE;
 	
 	private static final int EXP_INFO_INDEX = 6;
 	private static final int ACCEPT_TRADE_INDEX = 3;
@@ -192,7 +190,7 @@ public class DefaultTrade implements Trade {
 		acceptMeta.setDisplayName(i18n.getString(Messages.Inventory.ACCEPT_TRADE_TITLE));
 		acceptItemStack.setItemMeta(acceptMeta);
 		
-		ItemStack unconfirmedStatusItemStack = UNCONFIRMED_STATUS_MATERIAL_DATA.toItemStack(1);
+		ItemStack unconfirmedStatusItemStack = new ItemStack(UNCONFIRMED_STATUS_MATERIAL, 1);
 		ItemMeta unconfirmedStatusMeta = unconfirmedStatusItemStack.getItemMeta();
 		unconfirmedStatusMeta.setDisplayName(i18n.getVarString(Messages.Inventory.TRADE_STATUS_TITLE)
 			.setVariable("color", ChatColor.RED.toString())
@@ -816,11 +814,11 @@ public class DefaultTrade implements Trade {
 		boolean usesVault = plugin.usesVault();
 
 		if (initiator.hasAccepted() || partner.hasAccepted()) {
-			statusStack = CONFIRMED_STATUS_MATERIAL_DATA.toItemStack(1);
+			statusStack = new ItemStack(CONFIRMED_STATUS_MATERIAL, 1);
 			loreLine = i18n.getString(Messages.Inventory.ONE_PLAYER_ACCEPTED);
 			isConfirmed = true;
 		} else {
-			statusStack = UNCONFIRMED_STATUS_MATERIAL_DATA.toItemStack(1);
+			statusStack = new ItemStack(UNCONFIRMED_STATUS_MATERIAL, 1);
 			loreLine = i18n.getString(Messages.Inventory.WAITING_FOR_OTHER_PLAYER_LORE);
 			isConfirmed = false;
 		}

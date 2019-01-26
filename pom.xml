@@ -2,11 +2,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.xaniox</groupId>
   <artifactId>simpletrading</artifactId>
-  <version>1.4</version>
+  <version>1.5</version>
   <name>SimpleTrading</name>
   <inceptionYear>2015-2016</inceptionYear>
-  <description>Allow your players to safely trade with each other</description>
-  <url>http://dev.bukkit.org/bukkit-plugins/simpletrading/</url>
+  <description>Allow your players to safely trade with each other.</description>
   <properties>
     <project.encoding>UTF-8</project.encoding>
     <project.author>xaniox</project.author>
@@ -137,23 +136,12 @@
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>
-      <version>1.9-R0.1-SNAPSHOT</version>
+      <version>1.13.2-R0.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>net.milkbowl.vault</groupId>
       <artifactId>VaultAPI</artifactId>
       <version>1.5</version>
-    </dependency>
-    <dependency>
-      <groupId>org.mcstats.bukkit</groupId>
-      <artifactId>metrics</artifactId>
-      <version>R8-SNAPSHOT</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.bukkit</groupId>
-          <artifactId>bukkit</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
   </dependencies>
 </project>
