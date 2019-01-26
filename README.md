@@ -1,7 +1,10 @@
 # SimpleTrading
 This is a fork of SimpleTrading plugin for Bukkit.
+
 Original author: xaniox
+
 Original plugin page:
+
 * BukkitDev: http://dev.bukkit.org/bukkit-plugins/simple-trading/
 * SpigotMC: https://www.spigotmc.org/resources/simpletrading.23802/
 
