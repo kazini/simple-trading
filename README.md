@@ -3,6 +3,8 @@ This is a fork of SimpleTrading plugin for Bukkit.
 
 This fork is guaranteed to work only in 1.13+ for now.
 
+Download: https://drive.google.com/file/d/1Yg0ZVLLVQUPz4PQ8e6sFTnc27mW-7AoM/view?usp=sharing
+
 Original author: xaniox
 
 Original plugin page:
